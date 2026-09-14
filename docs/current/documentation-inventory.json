@@ -16,5 +16,16 @@
       "binary_content_revalidated": null
     }
   ],
-  "relative_link_findings": []
+  "relative_link_findings": [],
+  "integration_review": {
+    "source_commit": "bcd6cf08da5abe84a3e48f9c276d4bb212b15de9",
+    "destination_base": "12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e",
+    "historical_records_retained": true,
+    "source_files_preserved": true,
+    "local_mcp_tests": 16,
+    "local_tracing_tests": 6,
+    "local_provenance": "passed",
+    "remote_ci": "pending",
+    "production_qualified": false
+  }
 }

@@ -1,22 +1,36 @@
 # terraform
 
-Last source review: **2026-09-14**, default branch `main`, commit [`0a1366f29c95`](https://github.com/mmurugayen/terraform/commit/0a1366f29c95061a02df1654dc52dc87f3056196). This records documentation review, not a release or live-system certification.
+Source reviewed for this merge: [`bcd6cf08da5ab`](https://github.com/mmurugayen/terraform/commit/bcd6cf08da5abe84a3e48f9c276d4bb212b15de9) on `main`.
 
-This repository is a placeholder/test repository. The reviewed default branch contains 1 tracked file(s) and no deployable product, application entry point, infrastructure module or CI workflow.
+This repository contains shared correlated diagnostics and a Python MCP stdio adapter. It does not contain a deployable application or a Terraform infrastructure module.
 
-## Current contents
+## Correlated diagnostics and MCP investigation
 
-- `README.md`
+[Feature GYS-OBS-001](docs/product/backlog/GYS-OBS-001.md) adds structured diagnostics,
+[MCP investigation and verified recovery learning](docs/OBSERVABILITY_MCP.md).
+The source inventory and CI contracts track new implementation boundaries.
 
-## Architecture and workflow status
+## Contents and setup
 
-There are no runtime components, data stores, provider resources or product execution paths to diagram in the reviewed source. Architecture and product workflow diagrams are **not applicable yet**. In particular, a repository name does not establish a Terraform implementation.
+- `scripts/`: the diagnostics contract, logging helpers, MCP adapter and source inventory check.
+- `config/`: example log-source settings, source boundaries and shared-file provenance.
+- `tests/`: MCP transport, privacy and operation-tracing contracts.
+- `docs/`: integration instructions, source coverage and dated validation evidence.
 
-## Checkout
+Use Python 3.11 or newer. The diagnostics adapter has no third-party Python dependencies.
 
 ```bash
 git clone --branch main https://github.com/mmurugayen/terraform.git
 cd terraform
+python3 scripts/check_observability_coverage.py
+python3 -m unittest discover -s tests -p 'test_observability_mcp.py' -v
+python3 -m unittest discover -s tests -p 'test_operation_tracing.py' -v
 ```
 
-No build, install, deploy or test command is defined. Add instructions and source-backed diagrams when executable content is introduced. See the [documentation audit](docs/current/DOCUMENTATION_AUDIT.md).
+The Observability contracts workflow runs these checks on a self-hosted Linux x64 runner. Follow the [MCP guide](docs/OBSERVABILITY_MCP.md) to configure protected log files and start the adapter. Backend recovery requires separate configuration and the existing approval process.
+
+## Documentation history
+
+The [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) retains the earlier placeholder-source review. Its inventory and validation counts refer to that dated snapshot. This merge updates the README for the diagnostics source now present; see the [merge validation](docs/current/VALIDATION.md#merge-validation).
+
+No application deployment or live provider qualification is asserted by this documentation change.

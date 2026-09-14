@@ -31,3 +31,8 @@ The reviewed source has no runtime product to diagram. See [README](../../README
 ## Validation record
 
 See [VALIDATION.md](VALIDATION.md) for checks executed for this documentation change. Existing product test counts remain evidence of their original runs.
+
+
+## Diagnostics integration
+
+The original inventory and validation above refer to the placeholder snapshot. PR #1 adds the diagnostics source at `bcd6cf08da5abe84a3e48f9c276d4bb212b15de9`; the destination already includes documentation PR #2 at `12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e`. The README conflict is resolved by retaining both the current diagnostics setup and the historical documentation evidence. See [the current README](../../README.md).
