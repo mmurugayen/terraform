@@ -1,0 +1,20 @@
+{
+  "review_date": "2026-09-14",
+  "repository": "mmurugayen/terraform",
+  "default_branch": "main",
+  "reviewed_commit": "0a1366f29c95061a02df1654dc52dc87f3056196",
+  "text_documents": 1,
+  "office_pdf_artifacts": 0,
+  "method": "Original source blobs verified by Git hash; text navigation scanned; current entry points, dependencies, setup and architecture compared with selected implementation source. Historical validation results and Office/PDF contents are not recertified.",
+  "records": [
+    {
+      "path": "README.md",
+      "original_blob_sha": "32b29f6d54918d44f12015132e406209bb13dd51",
+      "reviewed_blob_sha": "78315860e55e335ea7b6a7a6bb6384dc6e4b3f85",
+      "classification": "Updated current navigation or source contract",
+      "relative_link_findings": [],
+      "binary_content_revalidated": null
+    }
+  ],
+  "relative_link_findings": []
+}
