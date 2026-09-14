@@ -1,5 +1,7 @@
 # terraform: diagnostic workflow
 
+Last source review: **2026-09-14**, default branch `main`, commit [`d5649a5a040c`](https://github.com/mmurugayen/terraform/commit/d5649a5a040cbad149a2940f84766c46f6b05f04). This records a documentation review of the linked source snapshot.
+
 ![Investigation and optional recovery order](diagrams/observability-workflow.svg)
 
 Search configured logs by correlation identifier, inspect truncated/unavailable evidence, and investigate qualified fingerprints. An optional compatible HPC backend can retrieve verified resolution examples. A matching registered action must be proposed and independently approved before a single apply attempt. Unknown outcomes require reconciliation. Learning requires server-verified plan outcomes and a matching local failure; it does not grant execution authority or retry effects automatically.

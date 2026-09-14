@@ -1,38 +1,41 @@
 # Documentation audit: terraform
 
-Reviewed **2026-09-14**, default branch `main`, commit [`12f71db2e5d1`](https://github.com/mmurugayen/terraform/commit/12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e).
+Reviewed **2026-09-14**, default branch `main`, source commit [`d5649a5a040c`](https://github.com/mmurugayen/terraform/commit/d5649a5a040cbad149a2940f84766c46f6b05f04).
 
-Inventory: **3 existing text documents**, **0 Office/PDF artifacts**, and **3 associated documentation assets**. See the [complete machine-readable inventory](documentation-inventory.json) for original and reviewed Git blob hashes.
+The fetched snapshot contains **31 tracked files**, including **9 text documents** and **0 Office/PDF artifacts**. The [inventory](documentation-inventory.json) records every original document and documentation asset by source blob, review disposition and current content hash where applicable.
 
-## Review method and scope
+## Current corrections
 
-Default-branch files and reviewed PR additions were materialized with matching Git blob hashes. Integration source heads and test limitations are recorded in MERGE_REVIEW.md. Existing text documents were scanned for relative navigation. Current READMEs, launchers, dependency pins, installation instructions and component/workflow boundaries were compared with the linked implementation source. This is not a line-by-line semantic recertification of every historical document or a new product qualification run.
+Corrected the review permalink and rendered explicit MCP process, configured log files and optional external backend boundaries. Added a local-only branch to the diagnostic workflow.
 
-Original requirements, design attachments, copied baselines, Office/PDF reports and dated test records retain their source identity. Their dates describe their own evidence; they are not mass-updated to imply new validation. Current guides take precedence for entry points and setup.
+The root README and current architecture/workflow review links identify this source snapshot. The main architecture uses explicit containers with nested components; separate workflows describe lifecycle decisions. Editable JSON and SVGs are kept reproducible with `python3 docs/current/diagrams/render.py --check`.
 
-## Corrections
+## Freshness method and limits
 
-- Expanded the placeholder README with actual default branch, tracked contents and explicit absence of runnable product architecture/workflows.
+The live default branch was inventoried, and every materialized file was obtained by matching its Git blob hash. Changes since the preceding recorded documentation review were compared on GitHub. Current READMEs, launchers, application factories, persistence boundaries, adapters and the linked workflow implementations were checked against the source. Existing text documents were scanned for relative file navigation.
 
-## Navigation findings
+Historical roadmaps, dated test records, release snapshots and supplied Office/PDF artifacts retain their original dates and evidence. Their presence does not establish current implementation or qualification. This audit does not recertify every historical design claim or rerun site acceptance. Use the current architecture, product scope and installation guides for operational entry points.
 
-No unresolved local file targets were found in the original document set after these updates. External services and third-party links were not live-tested.
+## Navigation
 
-## Existing document inventory
+All maintained relative file targets resolve.
 
-| Document | Review disposition |
+Product-map links, where present, target current default branches. External service availability and third-party URLs were not live-tested.
+
+## Recorded source dependencies
+
+| Git dependency | Committed revision |
 | --- | --- |
-| [README.md](../../README.md) | Updated current navigation or source contract |
-| [docs/OBSERVABILITY_MCP.md](../../docs/OBSERVABILITY_MCP.md) | Reference guide/asset; inventory and navigation checked |
-| [docs/product/backlog/GYS-OBS-001.md](../../docs/product/backlog/GYS-OBS-001.md) | Reference guide/asset; inventory and navigation checked |
+| None | No Git submodule dependency |
 
-## Current guides
+Dependency commits are source provenance; they do not imply a running service or include newer upstream main changes. This documentation refresh does not advance a dependency pin.
 
-[Architecture](ARCHITECTURE.md) · [Product workflows](WORKFLOWS.md) · [Repository README](../../README.md)
+## Source changes considered
 
-## Validation record
+Comparison: [`12f71db2e5d1...d5649a5a040c`](https://github.com/mmurugayen/terraform/compare/12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e...d5649a5a040cbad149a2940f84766c46f6b05f04). The [refresh record](refresh-validation.json) lists implementation, launcher and CI paths changed since the previous review. Documentation-only source advances retain the existing implementation contract.
 
-See [VALIDATION.md](VALIDATION.md) for checks executed for this documentation change. Existing product test counts remain evidence of their original runs.
+## Validation and maintenance
 
+[Validation commands and results](VALIDATION.md) · [Architecture](ARCHITECTURE.md) · [Product workflows](WORKFLOWS.md) · [Repository README](../../README.md).
 
-[Source integration and latest validation](MERGE_REVIEW.md).
+On the next source change, compare the relevant implementation and update the guide, diagram source, generated SVG and reviewed commit together. Keep past validation dates attached to the revision that produced them.

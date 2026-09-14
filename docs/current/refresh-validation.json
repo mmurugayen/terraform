@@ -1,0 +1,38 @@
+{
+  "review_date": "2026-09-14",
+  "repository": "mmurugayen/terraform",
+  "default_branch": "main",
+  "reviewed_source_commit": "d5649a5a040cbad149a2940f84766c46f6b05f04",
+  "previous_review_commit": "12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e",
+  "comparison_status": "ahead",
+  "tracked_files": 31,
+  "text_documents": 9,
+  "office_pdf_artifacts": 0,
+  "diagram_count": 2,
+  "architecture_diagrams": 1,
+  "workflow_diagrams": 1,
+  "relative_targets_checked": 40,
+  "navigation_findings": [],
+  "checks": [
+    {
+      "command": "python docs/current/diagrams/render.py --check",
+      "exit_code": 0,
+      "output": "Checked 2 diagrams"
+    }
+  ],
+  "source_delta_paths": [
+    ".github/workflows/observability.yml",
+    ".gitignore",
+    "scripts/check_observability_coverage.py",
+    "scripts/gysam_diagnostic_contract.py",
+    "scripts/gysam_diagnostics.py",
+    "scripts/gysam_observability.py",
+    "tests/test_observability_mcp.py",
+    "tests/test_operation_tracing.py"
+  ],
+  "site_runtime_tests": "not_run_documentation_only",
+  "historical_documents": "inventory and navigation checked; original dates and historical acceptance retained",
+  "review_limit": "Current entry points, component ownership, deployment dependencies and workflow source contracts reviewed; historical reports and all individual design claims are not recertified.",
+  "diagram_rasterization": "PASS: all repository SVG diagrams rendered to PNG",
+  "changed_scope": "README and docs only; runtime files and dependency pins unchanged"
+}

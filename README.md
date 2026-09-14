@@ -1,6 +1,6 @@
 # terraform
 
-Reviewed **2026-09-14**, branch `main`, commit [`5b037356c908`](https://github.com/mmurugayen/terraform/commit/12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e).
+Last source review: **2026-09-14**, default branch `main`, commit [`d5649a5a040c`](https://github.com/mmurugayen/terraform/commit/d5649a5a040cbad149a2940f84766c46f6b05f04). This records a documentation review of the linked source snapshot.
 
 This repository contains a standalone Python diagnostic/MCP utility and repository test material. It does not currently define a deployable domain product or Terraform infrastructure. The diagnostic utility reads operator-configured logs; optional recovery uses a separately deployed, compatible HPC backend.
 
@@ -30,3 +30,5 @@ python3 scripts/check_observability_coverage.py
 
 
 The [integration review](docs/current/MERGE_REVIEW.md) records concurrent source, dependency and pipeline changes.
+
+Current guide maintenance: the [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) records source revisions and historical-document status. Validate editable diagrams with `python3 docs/current/diagrams/render.py --check`.
