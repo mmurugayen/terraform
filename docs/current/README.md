@@ -2,7 +2,7 @@
 
 Last source review: **2026-09-14**, default branch `main`, commit [`d5649a5a040c`](https://github.com/mmurugayen/terraform/commit/d5649a5a040cbad149a2940f84766c46f6b05f04). This records a documentation review of the linked source snapshot.
 
-Reviewed 2026-09-14 against `12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e`. The source contains a diagnostic utility; no domain product or Terraform resources are declared.
+The source contains a diagnostic utility; no domain product or Terraform resources are declared.
 
 - [Architecture](ARCHITECTURE.md)
 - [Workflow](WORKFLOWS.md)
