@@ -1,10 +1,16 @@
 {
-  "repository": "terraform",
   "review_date": "2026-09-14",
-  "reviewed_commit": "12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e",
-  "local_links_checked": 40,
-  "diagram_count": 2,
-  "checks": [
+  "repository": "terraform",
+  "base": "12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e",
+  "pull_requests": [
+    {
+      "number": 1,
+      "head": "bcd6cf08da5abe84a3e48f9c276d4bb212b15de9",
+      "base": "main",
+      "title": "Implement GYS-OBS-001: correlated diagnostics and MCP investigation"
+    }
+  ],
+  "local_checks": [
     {
       "command": "python3 scripts/check_observability_coverage.py",
       "exit_code": 0,
@@ -21,9 +27,10 @@
       "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nOK\n"
     }
   ],
-  "errors": [],
-  "limits": [
-    "Remote final-merge CI is separate evidence.",
-    "Native provider, deployment and historical Office/PDF qualification were not rerun."
+  "remote_checks": [
+    {
+      "pr": 1,
+      "checks": []
+    }
   ]
 }

@@ -1,36 +1,32 @@
 # terraform
 
-Source reviewed for this merge: [`bcd6cf08da5ab`](https://github.com/mmurugayen/terraform/commit/bcd6cf08da5abe84a3e48f9c276d4bb212b15de9) on `main`.
+Reviewed **2026-09-14**, branch `main`, commit [`5b037356c908`](https://github.com/mmurugayen/terraform/commit/12f71db2e5d1dd164a98b8c8a6a724f9d6642d7e).
 
-This repository contains shared correlated diagnostics and a Python MCP stdio adapter. It does not contain a deployable application or a Terraform infrastructure module.
+This repository contains a standalone Python diagnostic/MCP utility and repository test material. It does not currently define a deployable domain product or Terraform infrastructure. The diagnostic utility reads operator-configured logs; optional recovery uses a separately deployed, compatible HPC backend.
 
-## Correlated diagnostics and MCP investigation
+![Diagnostic utility architecture](docs/current/diagrams/observability-architecture.svg)
 
-[Feature GYS-OBS-001](docs/product/backlog/GYS-OBS-001.md) adds structured diagnostics,
-[MCP investigation and verified recovery learning](docs/OBSERVABILITY_MCP.md).
-The source inventory and CI contracts track new implementation boundaries.
+[Component architecture](docs/current/ARCHITECTURE.md) · [Investigation and recovery workflow](docs/current/WORKFLOWS.md) · [Documentation audit](docs/current/DOCUMENTATION_AUDIT.md)
 
-## Contents and setup
+## Run the diagnostic utility
 
-- `scripts/`: the diagnostics contract, logging helpers, MCP adapter and source inventory check.
-- `config/`: example log-source settings, source boundaries and shared-file provenance.
-- `tests/`: MCP transport, privacy and operation-tracing contracts.
-- `docs/`: integration instructions, source coverage and dated validation evidence.
-
-Use Python 3.11 or newer. The diagnostics adapter has no third-party Python dependencies.
+Use Python 3.11 or later. Copy `config/observability-mcp.example.json` to a local configuration and supply explicit log paths. Run:
 
 ```bash
-git clone --branch main https://github.com/mmurugayen/terraform.git
-cd terraform
-python3 scripts/check_observability_coverage.py
-python3 -m unittest discover -s tests -p 'test_observability_mcp.py' -v
-python3 -m unittest discover -s tests -p 'test_operation_tracing.py' -v
+python3 scripts/gysam_observability.py --config /absolute/path/config.json
 ```
 
-The Observability contracts workflow runs these checks on a self-hosted Linux x64 runner. Follow the [MCP guide](docs/OBSERVABILITY_MCP.md) to configure protected log files and start the adapter. Backend recovery requires separate configuration and the existing approval process.
+MCP stdout carries JSON-RPC; capture application diagnostics separately. Read [configuration, limits and optional recovery](docs/OBSERVABILITY_MCP.md) before configuring backend credentials or target aliases. Recovery is gated by the configured backend, registered runbooks and independent approval. There is no implicit application deployment, cloud provisioning or automatic repair.
 
-## Documentation history
+## Check the source
 
-The [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) retains the earlier placeholder-source review. Its inventory and validation counts refer to that dated snapshot. This merge updates the README for the diagnostics source now present; see the [merge validation](docs/current/VALIDATION.md#merge-validation).
+```bash
+python3 -m unittest discover -s tests -p 'test_observability_mcp.py'
+python3 -m unittest discover -s tests -p 'test_operation_tracing.py'
+python3 scripts/check_observability_coverage.py
+```
 
-No application deployment or live provider qualification is asserted by this documentation change.
+[Observability CI](.github/workflows/observability.yml) runs the utility contracts. [Feature acceptance](docs/product/backlog/GYS-OBS-001.md) tracks scope; [documentation validation](docs/current/VALIDATION.md) records checks actually run for this update.
+
+
+The [integration review](docs/current/MERGE_REVIEW.md) records concurrent source, dependency and pipeline changes.
