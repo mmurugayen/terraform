@@ -8,17 +8,35 @@
     "scripts/gysam_diagnostic_contract.py": "595410bf5d6487dc57591f2b55d61518a8da8eea9bd48473c99d7074b0d71fce",
     "scripts/gysam_diagnostics.py": "dfd8e93f748c970a4c7914d31070b73e579d30b0356efbb2e4b347f3aaba377c",
     "scripts/check_observability_coverage.py": "f1a3ae1247f049163b6e090c77e651811941f51abc99f96bb139e04654ef4ed1",
-    "tests/test_observability_mcp.py": "4b17ed7853aa8b99484ce024e9d144b4c7a802b843ca0fc2b68a2789d4740c65",
+    "tests/test_observability_mcp.py": "80b5d19226d32f23ce6df4010fc62d29010a361f760217f2388a810d70e158ed",
     "tests/test_operation_tracing.py": "071a47e456efb69da90511a31eb9753c1124559e844f9c48927841d5f45b5974"
   },
   "backend_response_integrity_review": {
-    "date": "2026-09-16",
+    "date": "2026-09-15",
     "canonical_repository": "mmurugayen/gysam-platform",
     "canonical_parent": "13addf54ed13faf86a64f19471502805f76a8c35",
     "scope": "Complete HTTP response framing, uncertain write outcome recovery, and malformed apply-result rejection; no automatic mutation retry.",
     "tests": "tests/test_observability_mcp.py",
     "acceptance": "Source correction only; current CI and installed-target qualification remain required.",
-    "canonical_commit": "d13ae1fd724ae46ce1a40b689d8e520995aaaa5f",
-    "canonical_pull_request": "https://github.com/mmurugayen/gysam-platform/pull/33"
+    "canonical_commit": "94dc29c50d0ed06a641822661c95253832ef87a3",
+    "canonical_pull_request": "https://github.com/mmurugayen/gysam-platform/pull/33",
+    "publication_repair": {
+      "parent": "d13ae1fd724ae46ce1a40b689d8e520995aaaa5f",
+      "reason": "Restore the literal end-of-string regex and remove the accidentally duplicated module tail; the published test otherwise fails Python parsing.",
+      "original_test_blob": "3a74839b6a2e52d5391a7fe994ba4d4cc83b6ee3",
+      "corrected_test_blob": "d359544d15cd7627bc984a6767600485187b3aa9",
+      "unchanged_runtime_sha256": "e54acf4dd3cb092127798be519c4faeb081d86801aacb5d162309d3893edfde9",
+      "baseline_methods_preserved": 22,
+      "validation": {
+        "python_syntax": "passed for repaired tests and adapter",
+        "focused_mcp_tests_passed": 20,
+        "new_http_subcases": 19,
+        "baseline_regression": "The repaired suite against parent main's adapter ran 20 tests with 12 failed assertions and 5 errors; these are overlapping subcases, not additional feature tests.",
+        "candidate_result": "All 20 tests pass against the unchanged PR adapter.",
+        "native_and_deployed_qualification": "Not run",
+        "merged_commit_ci": "Pending"
+      },
+      "evidence_scope": "Canonical Platform repair; this consumer independently passed 20 MCP tests, 6 operation-tracing tests and its source/provenance gate."
+    }
   }
 }
