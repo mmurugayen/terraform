@@ -22,6 +22,7 @@ MCP stdout carries JSON-RPC; capture application diagnostics separately. Read [c
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_observability_mcp.py'
+python3 -m unittest discover -s tests -p 'test_recovery_identity.py'
 python3 -m unittest discover -s tests -p 'test_operation_tracing.py'
 python3 scripts/check_observability_coverage.py
 ```
@@ -32,3 +33,5 @@ python3 scripts/check_observability_coverage.py
 The [integration review](docs/current/MERGE_REVIEW.md) records concurrent source, dependency and pipeline changes.
 
 Current guide maintenance: the [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) records source revisions and historical-document status. Validate editable diagrams with `python3 docs/current/diagrams/render.py --check`.
+
+[Recovery receipt integrity](docs/current/RECOVERY_IDENTITY.md) synchronizes the canonical plan/target/state checks and real HTTP regressions. Current CI and deployed-backend acceptance remain required.
