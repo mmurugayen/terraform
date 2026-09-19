@@ -32,3 +32,7 @@ python3 scripts/check_observability_coverage.py
 The [integration review](docs/current/MERGE_REVIEW.md) records concurrent source, dependency and pipeline changes.
 
 Current guide maintenance: the [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) records source revisions and historical-document status. Validate editable diagrams with `python3 docs/current/diagrams/render.py --check`.
+
+## Mandatory logging and quality gates
+
+All existing and future implementation in this repository follows the [logging and code-quality standard](docs/LOGGING_AND_CODE_QUALITY.md). Run `python3 scripts/quality_gate.py` and the repository's complete test/qualification suite before review. Pull requests must include privacy-safe structured logging for changed functionality and must pass syntax, Ruff lint, and all existing required CI checks; missing runners, skipped jobs, or unavailable native environments are not passes.
