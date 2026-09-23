@@ -21,8 +21,7 @@ MCP stdout carries JSON-RPC; capture application diagnostics separately. Read [c
 ## Check the source
 
 ```bash
-python3 -m unittest discover -s tests -p 'test_observability_mcp.py'
-python3 -m unittest discover -s tests -p 'test_operation_tracing.py'
+python3 -m unittest discover -s tests -v
 python3 scripts/check_observability_coverage.py
 ```
 
@@ -32,6 +31,14 @@ python3 scripts/check_observability_coverage.py
 The [integration review](docs/current/MERGE_REVIEW.md) records concurrent source, dependency and pipeline changes.
 
 Current guide maintenance: the [documentation audit](docs/current/DOCUMENTATION_AUDIT.md) records source revisions and historical-document status. Validate editable diagrams with `python3 docs/current/diagrams/render.py --check`.
+
+[Recovery receipt integrity](docs/current/RECOVERY_IDENTITY.md) synchronizes the canonical plan/target/state checks and real HTTP regressions. Current CI and deployed-backend acceptance remain required.
+
+[Diagnostic terminal events and sink recovery](docs/current/DIAGNOSTIC_TERMINAL_SINK.md) synchronizes the canonical helper, documents bounded stderr interruption accounting, and records local wrapper measurements. [Infrastructure ownership](docs/current/DIAGNOSTIC_TERMINAL_SINK.md#infrastructure-and-configuration-ownership) identifies the product-owned deployment paths.
+
+The [bounded reader snapshot contract](docs/OBSERVABILITY_MCP.md#bounded-reader-snapshots) reports observed source changes and keeps malformed newline bursts within the checked allocation budget. Canonical Platform #47 merge and current consumer CI remain required.
+
+[September 2026 source and CI audit](docs/validation/repository-audit-2026-09-19.md) records portable test results and outstanding qualification gates.
 
 ## Mandatory logging and quality gates
 
