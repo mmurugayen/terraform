@@ -10,7 +10,7 @@
     {
       "path": "README.md",
       "original_blob_sha": "a974bd335c06094f0b37ec3dbfe40077ca37cc0a",
-      "reviewed_blob_sha": "e1b8645b971b08b2831f90b2573db7e4bbae2827",
+      "reviewed_blob_sha": "1472abbe008c37cb390d4241999c69e168793ae6",
       "classification": "Current guide/diagram updated and source-boundary reviewed",
       "relative_link_findings": []
     },
@@ -59,7 +59,7 @@
     {
       "path": "docs/current/README.md",
       "original_blob_sha": "8a191177be3d4b51664d95b042bb818162138d3e",
-      "reviewed_blob_sha": "7af77e39da9d99aa56818492b9704f1bafa95f96",
+      "reviewed_blob_sha": "4c2327ab06070c3d2ff0ce5d0a9371b8cc9d12c9",
       "classification": "Current guide/diagram updated and source-boundary reviewed",
       "relative_link_findings": []
     },
@@ -146,6 +146,69 @@
       "reviewed_blob_sha": "e8dd4b88b13a9afe1a59b3416d71a4a727e0dff4",
       "classification": "Original dated/reference content retained; inventory/navigation checked",
       "relative_link_findings": []
+    },
+    {
+      "path": "docs/product/backlog/DEPLOYMENT_OPERATIONS_2026-09-17.md",
+      "original_blob_sha": null,
+      "reviewed_blob_sha": "7bf2e2f6fceca9e8bc7c80444816a95fab8aa153",
+      "classification": "Added deployment/operations planning; native acceptance Not run",
+      "relative_link_findings": []
+    },
+    {
+      "path": "docs/product/backlog/deployment-operations-2026-09-17.json",
+      "original_blob_sha": null,
+      "reviewed_blob_sha": "e50afa1f8ab2c29eeb1cfb7f4c74fdb61dc44136",
+      "classification": "Added deployment/operations planning; native acceptance Not run",
+      "relative_link_findings": []
+    },
+    {
+      "path": "docs/product/backlog/DEPLOYMENT_WORKSHEETS_2026-09-17.md",
+      "original_blob_sha": null,
+      "reviewed_blob_sha": "bac5ad3d46a7ada55b5daba49f49abb01e59e07e",
+      "classification": "Added deployment/operations planning; native acceptance Not run",
+      "relative_link_findings": []
     }
-  ]
+  ],
+  "deployment_operations_review": {
+    "date": "2026-09-17",
+    "base_branch": "main",
+    "base_commit": "fccf0ae1f323f56f4cf1fd4f29f03152c523ec9f",
+    "scope": "Targeted additive deployment/navigation update. Original dated review fields, counts and historical evidence remain unchanged.",
+    "shared_requirements": 9,
+    "projected_acceptance_criteria": 45,
+    "feature_count_policy": "Nine shared requirements projected by product. Product projections are not additive top-level features. Preserve all existing feature counts, IDs, states and evidence.",
+    "changed_documents": [
+      {
+        "path": "README.md",
+        "reviewed_blob_sha": "1472abbe008c37cb390d4241999c69e168793ae6",
+        "classification": "Planned deployment/operations refinement or navigation; native acceptance Not run",
+        "relative_link_findings": []
+      },
+      {
+        "path": "docs/current/README.md",
+        "reviewed_blob_sha": "4c2327ab06070c3d2ff0ce5d0a9371b8cc9d12c9",
+        "classification": "Planned deployment/operations refinement or navigation; native acceptance Not run",
+        "relative_link_findings": []
+      },
+      {
+        "path": "docs/product/backlog/DEPLOYMENT_OPERATIONS_2026-09-17.md",
+        "reviewed_blob_sha": "7bf2e2f6fceca9e8bc7c80444816a95fab8aa153",
+        "classification": "Planned deployment/operations refinement or navigation; native acceptance Not run",
+        "relative_link_findings": []
+      },
+      {
+        "path": "docs/product/backlog/deployment-operations-2026-09-17.json",
+        "reviewed_blob_sha": "e50afa1f8ab2c29eeb1cfb7f4c74fdb61dc44136",
+        "classification": "Planned deployment/operations refinement or navigation; native acceptance Not run",
+        "relative_link_findings": []
+      },
+      {
+        "path": "docs/product/backlog/DEPLOYMENT_WORKSHEETS_2026-09-17.md",
+        "reviewed_blob_sha": "bac5ad3d46a7ada55b5daba49f49abb01e59e07e",
+        "classification": "Planned deployment/operations refinement or navigation; native acceptance Not run",
+        "relative_link_findings": []
+      }
+    ],
+    "inventory_self_reference": "Historical self-record retained. New review records other changed blobs without a circular self-hash."
+  }
 }
