@@ -35,6 +35,10 @@
       "boundary": "MCP protocol; no existing application runtime",
       "direct_markers": []
     },
+    "scripts/inspect_actions_job_diagnostics.py": {
+      "boundary": "MCP protocol; no existing application runtime",
+      "direct_markers": []
+    },
     "scripts/quality_gate.py": {
       "boundary": "MCP protocol; no existing application runtime",
       "direct_markers": []
