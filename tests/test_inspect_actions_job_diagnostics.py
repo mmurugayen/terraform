@@ -54,6 +54,12 @@ class DiagnosticsTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     diagnostics.inspect_job(repo, job_id, opener=lambda *a, **k: self.fail("unexpected network"))
 
+    def test_oversized_and_nonobject_job_metadata_rejected(self):
+        for payload in (b" " * 65537, b"[]", b"null"):
+            with self.subTest(length=len(payload)):
+                with self.assertRaisesRegex(ValueError, "job_metadata_limit_exceeded|invalid_job_metadata"):
+                    diagnostics.inspect_job("terraform", 123, opener=lambda *a, **k: Response(payload))
+
     def test_api_failure_has_safe_structured_result(self):
         with patch.object(diagnostics, "inspect_job", side_effect=OSError("secret internal path")):
             with patch("sys.stdout", new_callable=io.StringIO) as output:
