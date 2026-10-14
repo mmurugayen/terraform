@@ -35,7 +35,12 @@ def inspect_job(repo, job_id, token="", opener=urlopen):
         headers["Authorization"] = "Bearer " + token
     request = Request(API.format(repo=repo, job_id=job_id), headers=headers)
     with opener(request, timeout=15) as response:
-        job = json.load(response)
+        raw = response.read(65537)
+    if len(raw) > 65536:
+        raise ValueError("job_metadata_limit_exceeded")
+    job = json.loads(raw)
+    if not isinstance(job, dict):
+        raise ValueError("invalid_job_metadata")
     steps = job.get("steps")
     if not isinstance(steps, list):
         steps = []
