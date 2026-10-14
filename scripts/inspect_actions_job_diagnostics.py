@@ -6,10 +6,13 @@ the token. Exit code 2 indicates that one or more API responses were unavailable
 """
 import argparse
 import json
+import logging
 import os
 import sys
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+logger = logging.getLogger(__name__)
 
 TARGETS = (
     ("terraform", 114799205150),
@@ -36,6 +39,7 @@ def inspect_job(repo, job_id, token="", opener=urlopen):
     steps = job.get("steps")
     if not isinstance(steps, list):
         steps = []
+    logger.info("Inspected Actions job metadata for %s job %d", repo, job_id)
     return {
         "repository": repo,
         "job_id": job_id,
@@ -72,6 +76,7 @@ def main(argv=None):
             results.append({"repository": repo, "job_id": job_id,
                             "diagnostic": "api_unavailable",
                             "error_type": type(exc).__name__})
+    logger.info("Actions job diagnostic batch finished: %d jobs, api_failures=%s", len(results), failed)
     print(json.dumps({"schema_version": 1, "read_only": True, "jobs": results}, indent=2))
     return 2 if failed else 0
 
